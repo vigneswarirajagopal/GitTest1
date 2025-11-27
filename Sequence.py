@@ -1,3 +1,15 @@
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "App is running!"
+
+app.run(host="0.0.0.0", port=8080)
+
+
+
+
 print("=========== Task 7 ===========\n")
 
 #list of squares (1 to 10)
