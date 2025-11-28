@@ -1,26 +1,24 @@
 from flask import Flask
+
 app = Flask(__name__)
 
 @app.route("/")
-def home():
-    return "App is running!"
+def welcome():
+    return """
+    <html>
+        <head>
+            <title>Welcome Page</title>
+        </head>
+        <body style='text-align:center; margin-top: 100px; font-family: Arial;'>
+            <h1>Welcome to My Website!</h1>
+            <p>Wishing you a happy and beautiful life 😊</p>
+        </body>
+    </html>
+    """
 
-app.run(host="0.0.0.0", port=8080)
-
-
-
-
-print("=========== Task 7 ===========\n")
-
-#list of squares (1 to 10)
-square_list = [x**2 for x in range(1,11)]
-print("List of Squares (Using List): ", square_list)
-
-#map each number to its cube
-cubes_map = {x:x**3 for x in range(1,11)}
-print("Cubes of each number Using Dictionary: ", cubes_map)
+if __name__ == "__main__":
+    app.run(debug=True)
 
 
-#set of even numbers
-even_nos = {x for x in range(1,11) if x%2 == 0}
-print("Set of even numbers (Using Set Comprehension): ", even_nos)
+
+
